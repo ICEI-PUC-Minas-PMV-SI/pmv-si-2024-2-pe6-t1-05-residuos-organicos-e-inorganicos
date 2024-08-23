@@ -97,7 +97,29 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 # Catálogo de Serviços
 
-Descreva aqui todos os serviços que serão disponibilizados pelo seu projeto, detalhando suas características e funcionalidades.
+### Serviço de Cadastro e Edição de Pontos de Coleta
+
+**Descrição:**  
+Este serviço permite o cadastro e a gestão de pontos de coleta de materiais recicláveis no sistema. As instituições de coleta podem registrar suas informações, como nome, endereço, tipos de resíduos aceitos, e outras informações relevantes.
+
+**Funcionalidades:**
+
+- Cadastro de novos pontos de coleta.
+- Atualização de informações de pontos de coleta existentes.
+- Exclusão de pontos de coleta, se necessário.
+- Validação de dados de endereço e seleção dos tipos de resíduos aceitos.
+
+### Serviço de Exibição de Mapa com Pontos de Coleta
+
+**Descrição:**  
+Este serviço oferece uma visualização de mapa interativo, permitindo que os usuários localizem pontos de coleta cadastrados. O mapa inclui filtros por tipo de material reciclável para facilitar a busca.
+
+**Funcionalidades:**
+
+- Exibição de mapa geográfico com todos os pontos de coleta.
+- Filtro por tipo de resíduo (plástico, papel/papelão, resíduos eletrônicos).
+- Exibição de informações detalhadas ao clicar em um ponto de coleta.
+- Integração com OpenStreetMap.
 
 # Arquitetura da Solução
 
