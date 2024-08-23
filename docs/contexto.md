@@ -103,8 +103,7 @@ Descreva aqui todos os serviços que serão disponibilizados pelo seu projeto, d
 
 Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
 
-![arq](https://github.com/user-attachments/assets/b9402e05-8445-47c3-9d47-f11696e38a3d)
-
+![application](https://github.com/user-attachments/assets/4b37be46-1a96-4448-865c-87c299962e77)
 
 ## Tecnologias Utilizadas
 
