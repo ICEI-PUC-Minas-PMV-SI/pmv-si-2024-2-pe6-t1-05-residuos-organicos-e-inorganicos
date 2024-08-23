@@ -108,8 +108,30 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 ## Tecnologias Utilizadas
 
-Descreva aqui qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas.
-
+- Linguagens:
+  - Typescript: Linguagem tipada, baseada no JavaScript, que será utilizada no desenvolvimento do frontend (React e React Native) e backend (Node.js).
+- Frontend (Web):
+  - React: Framework JavaScript para construir a interface do usuário do projeto web.
+  - Next.js: Framework React utilizado para desenvolvimento fullstack com renderização server-side e geração de sites estáticos.
+  - Tailwind CSS: Framework utilitário de CSS utilizado para estilizar os componentes do frontend.
+  - Leaflet: Biblioteca JavaScript utilizada para exibir mapas interativos no projeto web.
+  - React Dropzone: Biblioteca utilizada para implementar áreas de drop para uploads de arquivos.
+- Frontend (Mobile):
+  - React Native: Framework para o desenvolvimento do aplicativo mobile.
+  - Expo: Plataforma usada no desenvolvimento do app mobile com React Native, que facilita o processo de construção, deploy e publicação.
+  - expo-location: Biblioteca utilizada para obter a localização do dispositivo no app mobile.
+  - React Native Maps: Biblioteca utilizada para exibir mapas no aplicativo mobile.
+- Backend:
+  - Node.js: Ambiente de execução JavaScript no backend.
+  - Express.js: Framework minimalista utilizado para criar a API REST.
+  - Knex.js: Query builder SQL usado para interagir com o banco de dados PostgreSQL de maneira mais flexível e eficiente.
+  - Multer: Middleware utilizado para fazer o upload de arquivos no backend.
+  - PostgreSQL: Banco de dados relacional utilizado para armazenar e gerenciar os dados da aplicação.
+- Ferramentas e IDE:
+  - VSCode: Ambiente de desenvolvimento integrado (IDE) para escrever e testar o código.
+  - Postman: Ferramenta utilizada para testar e documentar as APIs REST.
+  - Figma: Ferramenta utilizada para criação de layouts e protótipos.
+ 
 Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
 
 ## Hospedagem
