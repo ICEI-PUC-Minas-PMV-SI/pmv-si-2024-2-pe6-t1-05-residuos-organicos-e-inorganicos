@@ -4,6 +4,8 @@ A gestão de resíduos sólidos representa um desafio crescente nas áreas urban
 
 Um exemplo evidente desse problema pode ser observado em São Paulo, Brasil, onde, apesar de ser uma das cidades com o maior programa de coleta seletiva do país, apenas 23% dos resíduos sólidos são reciclados. Muitos cidadãos enfrentam dificuldades em encontrar pontos de coleta apropriados, o que desestimula a prática da reciclagem e contribui para a poluição ambiental e sobrecarga dos aterros sanitários (Prefeitura de São Paulo, 2023).
 
+De acordo com a Organização das Nações Unidas (ONU), cerca de 2,01 bilhões de toneladas de resíduos sólidos urbanos são gerados anualmente em todo o mundo, e apenas 19% desses resíduos são reciclados ou compostados. 
+
 Para enfrentar esses desafios, é preciso criar um sistema integrado que facilite o acesso às informações sobre reciclagem e incentive práticas sustentáveis, através do acesso à pontos de coleta de materiais recicláveis, promovendo assim, bons hábitos para a população de maneira eficaz e simplificada.
 
 ## Problema
@@ -22,15 +24,19 @@ Desenvolver um sistema completo que permita o cadastro de pontos de coleta de ma
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+O Projeto "Reciclar" surge como uma resposta à urgente necessidade de combater o descarte inadequado de resíduos sólidos nas cidades. Com a criação de um sistema web e um aplicativo mobile que centralizam informações sobre pontos de coleta de materiais recicláveis, incluindo localizações, horários de funcionamento e tipos de materiais aceitos, busca-se superar a dificuldade de acesso a esses dados, uma das principais barreiras à adoção de práticas sustentáveis. Ao facilitar o acesso a essas informações, o projeto incentiva a população a participar mais ativamente nos programas de coleta seletiva. Além disso, conecta cidadãos e gestores municipais, permitindo uma gestão de resíduos mais eficiente e promovendo uma cultura ambiental mais consciente, com impactos positivos significativos.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+- Cidadãos: Pessoas que estão preocupadas com o meio ambiente e desejam praticar a reciclagem.
+  
+- Gestores Públicos e Municipais: Autoridades e departamentos governamentais responsáveis pela gestão de resíduos urbanos.
 
+- Instituições de Coleta: Organizações, cooperativas e empresas responsáveis pela coleta e reciclagem de materiais.
+
+- Estudantes e Educadores: Instituições de ensino e grupos de estudantes que buscam promover a conscientização ambiental e a educação sobre a importância da reciclagem. 
+
+- Empresas e Indústrias: Empresas que geram resíduos recicláveis e buscam colaborar com iniciativas sustentáveis.
 # Especificações do Projeto
 
 ## Requisitos
@@ -125,13 +131,8 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 
 Explique como a hospedagem e o lançamento da plataforma foi feita.
 
-> **Links Úteis**:
->
-> - [Website com GitHub Pages](https://pages.github.com/)
-> - [Programação colaborativa com Repl.it](https://repl.it/)
-> - [Getting Started with Heroku](https://devcenter.heroku.com/start)
-> - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
-
 ## Referências Bibliográficas 
 
 Prefeitura de São Paulo. (2023). Programa de Coleta Seletiva. Disponível em: https://www.prefeitura.sp.gov.br/cidade/secretarias/meio_ambiente/coleta_seletiva/index.php. Acesso em: 25 ago. 2024.
+
+Organização das Nações Unidas (ONU): United Nations Environment Programme (UNEP). (2021). Global Environment Outlook – GEO-6: Healthy Planet, Healthy People. Disponível em: https://www.unep.org/resources/global-environment-outlook-6
