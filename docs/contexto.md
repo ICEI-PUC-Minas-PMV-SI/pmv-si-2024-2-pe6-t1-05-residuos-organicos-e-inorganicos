@@ -74,29 +74,72 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 # Catálogo de Serviços
 
-### Serviço de Cadastro e Edição de Pontos de Coleta
+## Serviço de Cadastro e Edição de Pontos de Coleta
 
 **Descrição:**  
-Este serviço permite o cadastro e a gestão de pontos de coleta de materiais recicláveis no sistema. As instituições de coleta podem registrar suas informações, como nome, endereço, tipos de resíduos aceitos, e outras informações relevantes.
+Este serviço permite o cadastro de novos pontos de coleta de materiais recicláveis no sistema. As instituições de coleta podem registrar suas informações, como nome, endereço, tipos de resíduos aceitos, entre outros.
 
 **Funcionalidades:**
 
 - Cadastro de novos pontos de coleta.
 - Atualização de informações de pontos de coleta existentes.
-- Exclusão de pontos de coleta, se necessário.
+- Exclusão de pontos de coleta (se necessário).
 - Validação de dados de endereço e seleção dos tipos de resíduos aceitos.
 
-### Serviço de Exibição de Mapa com Pontos de Coleta
+ **Usuários:**
+
+- Administradores do sistema. 
+- Representantes de instituições de coleta.
+
+**Nível de Serviço:**
+
+- Tempo de resposta: Até 5 segundos para salvar ou atualizar um registro. 
+- Acesso: Web. 
+
+## Serviço de Exibição de Mapa com Pontos de Coleta
 
 **Descrição:**  
-Este serviço oferece uma visualização de mapa interativo, permitindo que os usuários localizem pontos de coleta cadastrados. O mapa inclui filtros por tipo de material reciclável para facilitar a busca.
+Este serviço fornece a visualização de um mapa interativo onde os usuários podem localizar os pontos de coleta cadastrados. O mapa pode ser filtrado por tipo de material reciclável, facilitando a busca.
 
 **Funcionalidades:**
 
 - Exibição de mapa geográfico com todos os pontos de coleta.
 - Filtro por tipo de resíduo (plástico, papel/papelão, resíduos eletrônicos).
-- Exibição de informações detalhadas ao clicar em um ponto de coleta.
+- Informação detalhada ao clicar em um ponto de coleta. 
 - Integração com OpenStreetMap.
+
+**Usuários:**
+
+- Usuários finais que desejam localizar pontos de coleta. 
+- Administradores para fins de monitoramento. 
+
+**Nível de Serviço:**
+
+- Tempo de resposta: Até 5 segundos para carregar o mapa e os pontos. 
+- Acesso: Mobile. 
+
+## Serviço de Busca por Tipo de Resíduo
+
+**Descrição:**
+Este serviço permite que os usuários busquem pontos de coleta específicos com base no tipo de material reciclável que desejam descartar. Ao digitar o nome do resíduo, o sistema exibe os pontos de coleta correspondentes no mapa. 
+
+**Funcionalidades:**
+
+- Campo de busca para tipos de resíduos. 
+- Exibição de resultados no mapa. 
+- Sugestões de busca autocompletadas. 
+
+**Usuários:** 
+
+- Usuários finais que desejam localizar rapidamente pontos de coleta por tipo de resíduo. 
+
+**Nível de Serviço:**
+
+- Tempo de resposta: Até 3 segundos para exibir resultados de busca. 
+- Acesso: Web e Mobile. 
+
+
+
 
 # Arquitetura da Solução
 
