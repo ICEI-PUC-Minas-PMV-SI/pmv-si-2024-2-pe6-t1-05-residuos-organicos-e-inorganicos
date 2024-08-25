@@ -47,8 +47,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
+|RF-001| Permitir que o usuário visualize os pontos coletas | ALTA | 
 |RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-003| Permitir a criação, leitura, atualização e exclusão (CRUD), de registro de pontos de coleta  | ALTA | 
+|RF-004| O aplicativo móvel deve exibir o mapa geográfico com os pontos de coleta cadastrados.| ALTA | 
 
 ### Requisitos não Funcionais
 
@@ -56,6 +58,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-003| O sistema deve ser desenvolvido com arquitetura escalável para suportar futuras expansões. | ALTA | 
+|RNF-004| O sistema deve garantir a segurança e privacidade dos dados dos usuários, em conformidade com a LGPD (Lei Geral de Proteção de Dados).   | ALTA |
 
 ## Restrições
 
@@ -65,7 +69,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
 |02| Não pode ser desenvolvido um módulo de backend        |
-
+|03|  Permitir acesso apenas a usuários autenticados para realizar operações de cadastro e atualização | ALTA |
+|04|  Desenvolver utilizando tecnologias open-source | ALTA |
 
 # Catálogo de Serviços
 
