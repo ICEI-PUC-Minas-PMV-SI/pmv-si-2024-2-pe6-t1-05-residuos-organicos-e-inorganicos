@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# EcoPonto - Conecte-se Ao Futuro Sustentável
 
 `CURSO: Sistemas de Informação`
 
@@ -6,7 +6,7 @@
 
 `SEMESTRE: 6º`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O projeto "EcoPonto" visa resolver os desafios relacionados à gestão de resíduos sólidos em áreas urbanas, facilitando o acesso dos cidadãos a informações sobre pontos de coleta de materiais recicláveis através da criação de um sistema web e um aplicativo móvel. O sistema web permitirá o cadastro e a atualização de pontos de coleta, permitindo que instituições registrem informações detalhadas como localização e tipos de resíduos aceitos. Já o aplicativo móvel exibirá um mapa interativo com os pontos de coleta, oferecendo funcionalidades de busca e filtragem para que os usuários possam facilmente encontrar os locais mais próximos e adequados para o descarte de seus resíduos.
 
 ## Integrantes
 
@@ -18,7 +18,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Orientador
 
-* Nome completo do professor 1
+* Kleber Souza
 
 # Planejamento
 
