@@ -24,7 +24,7 @@ Desenvolver um sistema completo que permita o cadastro de pontos de coleta de ma
 
 ## Justificativa
 
-O Projeto "Reciclar" surge como uma resposta à urgente necessidade de combater o descarte inadequado de resíduos sólidos nas cidades. Com a criação de um sistema web e um aplicativo mobile que centralizam informações sobre pontos de coleta de materiais recicláveis, incluindo localizações, horários de funcionamento e tipos de materiais aceitos, busca-se superar a dificuldade de acesso a esses dados, uma das principais barreiras à adoção de práticas sustentáveis. Ao facilitar o acesso a essas informações, o projeto incentiva a população a participar mais ativamente nos programas de coleta seletiva. Além disso, conecta cidadãos e gestores municipais, permitindo uma gestão de resíduos mais eficiente e promovendo uma cultura ambiental mais consciente, com impactos positivos significativos.
+O Projeto "EcoPonto" surge como uma resposta à urgente necessidade de combater o descarte inadequado de resíduos sólidos nas cidades. Com a criação de um sistema web e um aplicativo mobile que centralizam informações sobre pontos de coleta de materiais recicláveis, incluindo localizações, horários de funcionamento e tipos de materiais aceitos, busca-se superar a dificuldade de acesso a esses dados, uma das principais barreiras à adoção de práticas sustentáveis. Ao facilitar o acesso a essas informações, o projeto incentiva a população a participar mais ativamente nos programas de coleta seletiva. Além disso, conecta cidadãos e gestores municipais, permitindo uma gestão de resíduos mais eficiente e promovendo uma cultura ambiental mais consciente, com impactos positivos significativos.
 
 ## Público-Alvo
 
