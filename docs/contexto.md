@@ -15,10 +15,10 @@ Desenvolver um sistema completo que permita o cadastro de pontos de coleta de ma
 
 ### Objetivos Especificos:
 
-> - Criar um sistema web para cadastro de pontos de coleta.
-> - Desenvolver um aplicativo móvel que exiba um mapa com a localização dos pontos de coleta.
-> - Implementar funcionalidades de busca e filtragem no aplicativo móvel para facilitar a localização de pontos de coleta específicos.
-> - Promover a conscientização ambiental e incentivar a reciclagem na comunidade.
+ - Criar um sistema web para cadastro de pontos de coleta.
+ - Desenvolver um aplicativo móvel que exiba um mapa com a localização dos pontos de coleta.
+ - Implementar funcionalidades de busca e filtragem no aplicativo móvel para facilitar a localização de pontos de coleta específicos.
+ - Promover a conscientização ambiental e incentivar a reciclagem na comunidade.
 
 ## Justificativa
 
