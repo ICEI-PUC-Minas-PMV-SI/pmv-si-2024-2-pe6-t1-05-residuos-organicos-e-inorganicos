@@ -1,13 +1,13 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+A gestão de resíduos sólidos representa um desafio crescente nas áreas urbanas, agravado pela falta de infraestruturas adequadas para coleta e destinação correta dos materiais recicláveis. Este problema é acentuado pela ausência de informações claras e acessíveis sobre onde e como descartar os resíduos de forma ambientalmente responsável. A carência de informações e a dificuldade em acessar os pontos de coleta apropriados levam ao descarte inadequado, o que contribui para a poluição ambiental, desperdício de recursos recicláveis e sobrecarga dos aterros sanitários.
+
+Um exemplo evidente desse problema pode ser observado em São Paulo, Brasil, onde, apesar de ser uma das cidades com o maior programa de coleta seletiva do país, apenas 23% dos resíduos sólidos são reciclados. Muitos cidadãos enfrentam dificuldades em encontrar pontos de coleta apropriados, o que desestimula a prática da reciclagem e contribui para a poluição ambiental e sobrecarga dos aterros sanitários (Prefeitura de São Paulo, 2023).
+
+Para enfrentar esses desafios, é preciso criar um sistema integrado que facilite o acesso às informações sobre reciclagem e incentive práticas sustentáveis, através do acesso à pontos de coleta de materiais recicláveis, promovendo assim, bons hábitos para a população de maneira eficaz e simplificada.
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+A ausência de informações claras e acessíveis sobre a localização e os tipos de materiais aceitos pelos pontos de coleta representa uma barreira significativa. Mesmo quando os pontos de coleta estão disponíveis, a falta de uma plataforma centralizada que permita aos cidadãos encontrar facilmente essas informações torna o processo de reciclagem inconveniente. Essa situação desmotiva a população a adotar práticas de reciclagem e perpetua o problema da gestão inadequada de resíduos.
 
 > **Links Úteis**:
 > - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
@@ -165,3 +165,7 @@ Explique como a hospedagem e o lançamento da plataforma foi feita.
 > - [Programação colaborativa com Repl.it](https://repl.it/)
 > - [Getting Started with Heroku](https://devcenter.heroku.com/start)
 > - [Publicando Seu Site No Heroku](http://pythonclub.com.br/publicando-seu-hello-world-no-heroku.html)
+
+## Referências Bibliográficas 
+
+Prefeitura de São Paulo. (2023). Programa de Coleta Seletiva. Disponível em: https://www.prefeitura.sp.gov.br/cidade/secretarias/meio_ambiente/coleta_seletiva/index.php. Acesso em: 25 ago. 2024.
