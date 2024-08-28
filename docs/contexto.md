@@ -45,12 +45,12 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário visualize os pontos coletas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
-|RF-003| Permitir a criação, leitura, atualização e exclusão (CRUD), de registro de pontos de coleta  | ALTA | 
-|RF-004| O aplicativo móvel deve exibir o mapa geográfico com os pontos de coleta cadastrados.| ALTA | 
+|ID    | Descrição do Requisito  | Prioridade | Responsável |
+|------|-----------------------------------------|----|--------------|
+|RF-001| Permitir que o usuário visualize e filtre os pontos coletas por resíduo e localição | ALTA | Mayderson e Marcelo | 
+|RF-002| Emitir um relatório de tarefas no mês  | ALTA | Efraim e Yuri|
+|RF-003| Permitir a criação, leitura, atualização e exclusão (CRUD), de registro de pontos de coleta  | ALTA | Lucélia e Mayderson| 
+
 
 ### Requisitos não Funcionais
 
@@ -58,8 +58,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
 |RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
-|RNF-003| O sistema deve ser desenvolvido com arquitetura escalável para suportar futuras expansões. | ALTA | 
-|RNF-004| O sistema deve garantir a segurança e privacidade dos dados dos usuários, em conformidade com a LGPD (Lei Geral de Proteção de Dados).   | ALTA |
+|RNF-003| O sistema deve garantir a segurança e privacidade dos dados dos usuários, em conformidade com a LGPD (Lei Geral de Proteção de Dados).   | ALTA |
 
 ## Restrições
 
@@ -117,29 +116,6 @@ Este serviço fornece a visualização de um mapa interativo onde os usuários p
 
 - Tempo de resposta: Até 5 segundos para carregar o mapa e os pontos. 
 - Acesso: Mobile. 
-
-## Serviço de Busca por Tipo de Resíduo
-
-**Descrição:**
-Este serviço permite que os usuários busquem pontos de coleta específicos com base no tipo de material reciclável que desejam descartar. Ao digitar o nome do resíduo, o sistema exibe os pontos de coleta correspondentes no mapa. 
-
-**Funcionalidades:**
-
-- Campo de busca para tipos de resíduos. 
-- Exibição de resultados no mapa. 
-- Sugestões de busca autocompletadas. 
-
-**Usuários:** 
-
-- Usuários finais que desejam localizar rapidamente pontos de coleta por tipo de resíduo. 
-
-**Nível de Serviço:**
-
-- Tempo de resposta: Até 3 segundos para exibir resultados de busca. 
-- Acesso: Web e Mobile. 
-
-
-
 
 # Arquitetura da Solução
 
