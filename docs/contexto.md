@@ -145,7 +145,8 @@ Este serviço permite que os usuários busquem pontos de coleta específicos com
 
 Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
 
-![application](https://github.com/user-attachments/assets/4b37be46-1a96-4448-865c-87c299962e77)
+![application](https://github.com/user-attachments/assets/fb429fe6-adc6-45f8-a904-fd7d5bd3a316)
+
 
 ## Tecnologias Utilizadas
 
