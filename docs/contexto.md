@@ -177,7 +177,7 @@ Apresente também uma figura explicando como as tecnologias estão relacionadas 
 
 ## Hospedagem
 
-Explique como a hospedagem e o lançamento da plataforma foi feita.
+A hospedagem do Front-end será feita pela plataforma da Vercel, o Back-end será hospedado na AWS utilizando o serviço da EC2 e o aplicativo mobile vai estar disponível pela plataforma do Expo.
 
 ## Referências Bibliográficas 
 
