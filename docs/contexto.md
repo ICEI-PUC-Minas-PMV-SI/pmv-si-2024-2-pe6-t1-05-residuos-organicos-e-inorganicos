@@ -13,7 +13,7 @@ A ausência de informações claras e acessíveis sobre a localização e os tip
 
 ## Objetivo Geral:
 
-Desenvolver um sistema completo que permita o cadastro de pontos de coleta de materiais recicláveis, com uma interface de administração para gestores e um aplicativo móvel para que os cidadãos possam localizar facilmente os pontos de coleta próximos a eles.
+Desenvolver um sistema distruibuído que permita o cadastro de pontos de coleta de materiais recicláveis, com uma interface de administração para gestores e um aplicativo móvel para que os cidadãos possam localizar facilmente os pontos de coleta próximos a eles.
 
 ### Objetivos Especificos:
 
