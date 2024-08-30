@@ -67,9 +67,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-|03|  Permitir acesso apenas a usuários autenticados para realizar operações de cadastro e atualização | ALTA |
-|04|  Desenvolver utilizando tecnologias open-source | ALTA |
+|02|  Desenvolver utilizando tecnologias open-source | ALTA |
 
 # Catálogo de Serviços
 
