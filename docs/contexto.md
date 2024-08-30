@@ -101,10 +101,10 @@ Este serviço permite que o usuário/empresa crie, leia, atualize e exclua (CRUD
 
 **Funcionalidades:**
 
-- Criar seu cadastro no sistema.
-- Ler seu cadastro no sistema.
-- Excluir seu cadastro no sistema.
-- Atualizar seu cadastro no sistema. 
+- Criar cadastro no sistema.
+- Ler cadastro no sistema.
+- Excluir cadastro no sistema.
+- Atualizar cadastro no sistema. 
 
 **Nível de Serviço:**
 
