@@ -47,9 +47,11 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade | Responsável |
 |------|-----------------------------------------|----|--------------|
-|RF-001| Permitir que o usuário visualize e filtre os pontos coletas por resíduo e localição | ALTA | Mayderson e Marcelo | 
-|RF-002| Emitir um relatório de tarefas no mês  | ALTA | Efraim e Yuri|
-|RF-003| Permitir a criação, leitura, atualização e exclusão (CRUD), de registro de pontos de coleta  | ALTA | Lucélia e Mayderson| 
+|RF-001| Permitir que o usuário/cliente visualize e filtre os pontos de coletas por resíduo e localização. | ALTA | Mayderson e Marcelo | 
+|RF-002| Permitir que o usuário/empresa emita um relatório de pontos de coletas ativos. | ALTA | Efraim e Yuri|
+|RF-003| Permitir que o usuário/empresa crie, leia, atualize e exclua (CRUD), os seus registros de pontos de coleta. | ALTA | Lucélia e Mayderson| 
+|RF-004| Permitir a gestão do usuário/empresa. | ALTA | Mayderson e Marcelo| 
+|RF-005| Permitir a autenticação de usuários/empresa.  | ALTA | Efraim e Yuri| 
 
 
 ### Requisitos não Funcionais
@@ -85,17 +87,34 @@ Este serviço permite o cadastro de novos pontos de coleta de materiais reciclá
 
  **Usuários:**
 
-- Administradores do sistema. 
-- Representantes de instituições de coleta.
+- Usuários/Empresa. 
 
 **Nível de Serviço:**
 
 - Tempo de resposta: Até 5 segundos para salvar ou atualizar um registro. 
 - Acesso: Web. 
 
+## Serviço de Gestão do Usuários/Empresa
+
+**Descrição:**  
+Este serviço permite que o usuário/empresa crie, leia, atualize e exclua (CRUD), o seu cadastro.
+
+**Funcionalidades:**
+
+- Criar seu cadastro no sistema.
+- Ler seu cadastro no sistema.
+- Excluir seu cadastro no sistema.
+- Atualizar seu cadastro no sistema. 
+
+**Nível de Serviço:**
+
+- Tempo de resposta: Até 5 segundos para carregar as informações de cadastro. 
+- Acesso: Web.
+
 ## Serviço de Exibição de Mapa com Pontos de Coleta
 
 **Descrição:**  
+
 Este serviço fornece a visualização de um mapa interativo onde os usuários podem localizar os pontos de coleta cadastrados. O mapa pode ser filtrado por tipo de material reciclável, facilitando a busca.
 
 **Funcionalidades:**
@@ -107,14 +126,18 @@ Este serviço fornece a visualização de um mapa interativo onde os usuários p
 
 **Usuários:**
 
-- Usuários finais que desejam localizar pontos de coleta. 
-- Administradores para fins de monitoramento. 
+- Usuários/Clientes.
 
 **Nível de Serviço:**
 
 - Tempo de resposta: Até 5 segundos para carregar o mapa e os pontos. 
 - Acesso: Mobile. 
 
+# Arquitetura da Solução
+
+Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+
+  
 # Arquitetura da Solução
 
 Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
