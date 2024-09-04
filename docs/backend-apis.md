@@ -1,10 +1,8 @@
 # APIs e Web Services
 
-O planejamento de uma aplicação de APIS Web é uma etapa fundamental para o sucesso do projeto. Ao planejar adequadamente, você pode evitar muitos problemas e garantir que a sua API seja segura, escalável e eficiente.
+O projeto "EcoPonto" desenvolve uma aplicação de APIs Web para gerenciar pontos de coleta de materiais recicláveis em áreas urbanas, facilitando o acesso a informações sobre coleta seletiva. A plataforma permitirá o cadastro e a atualização de pontos de coleta por gestores através de uma interface web, e ajudará os cidadãos a localizar pontos de coleta próximos por meio de um aplicativo móvel.
 
-Aqui estão algumas etapas importantes que devem ser consideradas no planejamento de uma aplicação de APIS Web.
 
-[Inclua uma breve descrição do projeto.]
 
 ## Objetivos da API
 
