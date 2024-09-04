@@ -8,7 +8,7 @@ O projeto "EcoPonto" desenvolve uma aplicação de APIs Web para gerenciar ponto
   
 - Proporcionar Acesso Centralizado a Informações: A API deve oferecer um acesso centralizado e eficiente às informações sobre os pontos de coleta, tanto para gestores quanto para cidadãos, através de uma interface web e um aplicativo móvel.
   
-- Promover a Reciclagem e a Conscientização Ambiental: Os serviços e APIs desenvolvidas se integrarão para formar uma ferramenta, e asiim, incentivar a participação dos cidadãos nos programas de reciclagem, facilitando a localização de pontos de coleta e fornecendo informações relevantes sobre práticas sustentáveis.
+- Promover a Reciclagem e a Conscientização Ambiental: Os serviços e APIs desenvolvidas se integrarão para formar uma ferramenta, e asim, incentivar a participação dos cidadãos nos programas de reciclagem, facilitando a localização de pontos de coleta e fornecendo informações relevantes sobre práticas sustentáveis.
   
 - Segurança e Conformidade com a LGPD: A API deve garantir a segurança dos dados dos usuários e estar em conformidade com a Lei Geral de Proteção de Dados (LGPD), protegendo informações sensíveis e garantindo a privacidade dos usuários.
   
