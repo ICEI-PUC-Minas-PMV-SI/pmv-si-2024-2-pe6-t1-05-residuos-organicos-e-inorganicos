@@ -2,13 +2,19 @@
 
 O projeto "EcoPonto" desenvolve uma aplicação de APIs Web para gerenciar pontos de coleta de materiais recicláveis em áreas urbanas, facilitando o acesso a informações sobre coleta seletiva. A plataforma permitirá o cadastro e a atualização de pontos de coleta por gestores através de uma interface web, e ajudará os cidadãos a localizar pontos de coleta próximos por meio de um aplicativo móvel.
 
+## Objetivos da API "EcoPonto"
 
-
-## Objetivos da API
-
-O primeiro passo é definir os objetivos da sua API. O que você espera alcançar com ela? Você quer que ela seja usada por clientes externos ou apenas por aplicações internas? Quais são os recursos que a API deve fornecer?
-
-[Inclua os objetivos da sua api.]
+- Facilitar a Gestão de Pontos de Coleta: A API deve permitir que gestores cadastrem, atualizem, consultem e excluam informações sobre pontos de coleta de materiais recicláveis, como localização, horários de funcionamento e tipos de materiais aceitos.
+  
+- Proporcionar Acesso Centralizado a Informações: A API deve oferecer um acesso centralizado e eficiente às informações sobre os pontos de coleta, tanto para gestores quanto para cidadãos, através de uma interface web e um aplicativo móvel.
+  
+- Promover a Reciclagem e a Conscientização Ambiental: A API deve servir como uma ferramenta que incentive a participação dos cidadãos nos programas de reciclagem, facilitando a localização de pontos de coleta e fornecendo informações relevantes sobre práticas sustentáveis.
+  
+- Segurança e Conformidade com a LGPD: A API deve garantir a segurança dos dados dos usuários e estar em conformidade com a Lei Geral de Proteção de Dados (LGPD), protegendo informações sensíveis e garantindo a privacidade dos usuários.
+  
+- Escalabilidade e Eficiência:  A API deve ser escalável para suportar um grande número de usuários e operações simultâneas, mantendo um tempo de resposta eficiente para uma experiência de usuário satisfatória.
+  
+- Funcionalidades de Busca e Filtragem: A API deve fornecer recursos para busca e filtragem de pontos de coleta por localização, tipo de material aceito, e outros critérios relevantes, facilitando o acesso às informações específicas que os usuários precisam.
 
 
 ## Arquitetura
