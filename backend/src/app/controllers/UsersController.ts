@@ -65,4 +65,24 @@ export default new (class UsersController {
 				.json({ message: "Erro ao atualizar usuário.", error });
 		}
 	}
+
+	async deleteUser(req: Request, res: Response) {
+		const { id } = req.params;
+
+		try {
+			const user = await knex("users").where("id", id).first();
+
+			if (!user) {
+				return res.status(404).json({ message: "Usuário não encontrado." });
+			}
+
+			await knex("users").where("id", id).del();
+
+			return res.status(204).json();
+		} catch (error) {
+			return res
+				.status(500)
+				.json({ message: "Erro ao deletar usuário.", error });
+		}
+	}
 })();

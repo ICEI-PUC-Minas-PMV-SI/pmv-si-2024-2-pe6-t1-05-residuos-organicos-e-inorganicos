@@ -18,7 +18,7 @@ routes.get("/users/:id", authMiddleware, UsersController.getUser);
 //routes.get("/users", authMiddleware, UsersController.listUsers);
 // routes.post('/users', UsersController.createUser);
 routes.put("/users/:id", authMiddleware, UsersController.updateUser);
-// routes.delete('/users/:id', authMiddleware, UsersController.deleteUser)
+routes.delete("/users/:id", authMiddleware, UsersController.deleteUser);
 
 // Items routes
 // routes.get('/items', authMiddleware, ItemsController.getItems);
