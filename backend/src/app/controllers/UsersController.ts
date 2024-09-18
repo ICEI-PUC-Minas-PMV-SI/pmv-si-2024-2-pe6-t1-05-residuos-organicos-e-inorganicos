@@ -7,6 +7,33 @@ import knex from "../../database/connection";
 const JWT_SECRET = "ecoponto";
 
 export default new (class UsersController {
+  async createUser(req: Request, res: Response) {
+    try {
+      const { name, email, password } = req.body;
+
+      const userExists = await knex('users').where('email', email).first();
+      if (userExists) {
+        return res.status(400).json({ message: 'Email já está em uso.' });
+      }
+
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+      const newUser = {
+        name,
+        email,
+        password: hashedPassword,
+        created_at: knex.fn.now(),
+        updated_at: knex.fn.now(),
+      };
+
+      const [id] = await knex('users').insert(newUser);
+
+      return res.status(201).json({ id, name, email });
+    } catch (error) {
+      return res.status(500).json({ message: 'Erro ao criar usuário.', error });
+    }
+  }
+
 	async getUser(req: Request, res: Response) {
 		const { id } = req.params;
 
