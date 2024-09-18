@@ -34,6 +34,35 @@ export default new (class UsersController {
     }
   }
 
+  async listUsers(req: Request, res: Response) {
+    const { page = 1, limit = 10 } = req.query;
+
+    const pageNumber = Number(page);
+    const limitNumber = Number(limit);
+    const offset = (pageNumber - 1) * limitNumber;
+
+    try {
+      const users = await knex('users')
+        .select('id', 'name', 'email', 'created_at', 'updated_at')
+        .limit(limitNumber)
+        .offset(offset);
+
+      const totalUsers = await knex('users').count('* as count').first();
+
+      return res.json({
+        data: users,
+        pagination: {
+          totalItems: totalUsers?.count,
+          totalPages: Math.ceil(Number(totalUsers?.count) / limitNumber),
+          currentPage: pageNumber,
+          limit: limitNumber,
+        },
+      });
+    } catch (error) {
+      return res.status(500).json({ message: 'Erro ao listar usuários.', error });
+    }
+  }
+
 	async getUser(req: Request, res: Response) {
 		const { id } = req.params;
 
