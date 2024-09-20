@@ -56,4 +56,30 @@ export default new class PointsController {
       },
     });
   }
+   async deletePoint(req: Request, res: Response) {
+    const { id } = req.params;
+
+    try {
+      const trx = await knex.transaction();
+
+      const point = await trx('points').where('id', id).first();
+
+      if (!point) {
+        await trx.rollback();
+        return res.status(404).json({ message: 'Ponto não encontrado.' });
+      }
+
+      await trx('point_items').where('point_id', id).del();
+
+      await trx('points').where('id', id).del();
+
+      await trx.commit();
+
+      return res.status(204).json()
+    } catch (error) {
+      return res.status(500).json({
+        message: 'Não foi possível deletar o ponto. Tente novamente mais tarde.'
+      });
+    }
+  }
 }
