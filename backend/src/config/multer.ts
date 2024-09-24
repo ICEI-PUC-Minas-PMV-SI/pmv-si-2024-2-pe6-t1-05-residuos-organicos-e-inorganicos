@@ -1,7 +1,7 @@
-import multer from 'multer';
-import { Request } from 'express';
-import { resolve } from 'path';
 import { randomBytes } from 'crypto';
+import { Request } from 'express';
+import multer from 'multer';
+import { resolve } from 'path';
 
 export default {
   storage: multer.diskStorage({
