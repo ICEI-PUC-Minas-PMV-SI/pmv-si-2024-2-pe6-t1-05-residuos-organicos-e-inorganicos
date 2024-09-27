@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import knex from '../../database/connection';
 
 export default new class PointsController {
-  async listAllPoints(req: Request, res: Response) {
+  async listPoints(req: Request, res: Response) {
     const { city, uf, items, page = 1, limit = 10 } = req.query;
 
     if (!city || !uf || !items) {
@@ -58,6 +58,28 @@ export default new class PointsController {
     });
   }
 
+  async getPoint(req: Request, res: Response) {
+    const { id } = req.params;
+
+    const point = await knex('points').where('id', id).first();
+
+    if (!point) {
+      return res.status(400).json({ error: 'Ponto não encontrado.' });
+    }
+
+    const serializedPoint = {
+      ...point,
+      image_url: `http://localhost:3333/uploads/${point.image}`,
+    };
+
+    const items = await knex('items')
+      .join('point_items', 'items.id', '=', 'point_items.item_id')
+      .where('point_items.point_id', id)
+      .select('items.title');
+
+    return res.json({ point: serializedPoint, items });
+  }
+
   async createPoint(req: Request, res: Response) {
     try {
       const {
@@ -104,28 +126,6 @@ export default new class PointsController {
         message: 'Não foi possível criar o ponto, verifique as informações enviadas e tente novamente.'
       })
     }
-  }
-
-  async listPoint(req: Request, res: Response) {
-    const { id } = req.params;
-
-    const point = await knex('points').where('id', id).first();
-
-    if (!point) {
-      return res.status(400).json({ error: 'Ponto não encontrado.' });
-    }
-
-    const serializedPoint = {
-      ...point,
-      image_url: `http://localhost:3333/uploads/${point.image}`,
-    };
-
-    const items = await knex('items')
-      .join('point_items', 'items.id', '=', 'point_items.item_id')
-      .where('point_items.point_id', id)
-      .select('items.title');
-
-    return res.json({ point: serializedPoint, items });
   }
 
   async updatePoint(req: Request, res: Response) {

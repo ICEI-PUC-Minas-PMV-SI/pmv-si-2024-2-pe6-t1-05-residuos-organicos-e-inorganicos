@@ -24,8 +24,8 @@ routes.delete('/users/:id', authMiddleware, UsersController.deleteUser)
 routes.get('/items', authMiddleware, ItemsController.getItems);
 
 // Points routes
-routes.get('/points', authMiddleware, PointsController.listAllPoints);
-routes.get('/points/:id', authMiddleware, PointsController.listPoint);
+routes.get('/points', authMiddleware, PointsController.listPoints);
+routes.get('/points/:id', authMiddleware, PointsController.getPoint);
 routes.post('/points', authMiddleware, upload.single('image'), PointsController.createPoint);
 routes.put('/points/:id', authMiddleware, upload.single('image'), PointsController.updatePoint)
 routes.delete('/points/:id', authMiddleware, PointsController.deletePoint)
