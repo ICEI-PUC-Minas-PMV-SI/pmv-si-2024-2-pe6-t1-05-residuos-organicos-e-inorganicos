@@ -1,0 +1,11 @@
+# psql -h localhost -p 5432 -d ecoponto -U root -W
+services:
+  db:
+    container_name: api_ecoponto_db
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=ecoponto

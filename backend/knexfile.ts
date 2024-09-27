@@ -1,9 +1,13 @@
 import { resolve } from 'path';
 
 module.exports = {
-  client: 'sqlite3',
+  client: 'pg',
   connection: {
-    filename: resolve(__dirname, 'src', 'database', 'database.sqlite'),
+    host: 'localhost',
+    user: 'root',
+    password: '123',
+    database: 'ecoponto',
+    port: 5432,
   },
   migrations: {
     directory: resolve(__dirname, 'src', 'database', 'migrations'),

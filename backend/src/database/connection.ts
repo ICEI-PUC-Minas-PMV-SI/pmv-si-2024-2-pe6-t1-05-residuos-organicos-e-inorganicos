@@ -1,11 +1,15 @@
 import knex from 'knex';
-import { resolve } from 'path';
 
 const connection = knex({
-  client: 'sqlite3',
+  client: 'pg',
   connection: {
-    filename: resolve(__dirname, 'database.sqlite'),
+    host: 'localhost',
+    user: 'root',
+    password: '123',
+    database: 'ecoponto',
+    port: 5432,
   },
+  pool: { min: 2, max: 10 },
   useNullAsDefault: true,
 });
 
