@@ -106,21 +106,21 @@ export default new class PointsController {
         uf,
       }
 
-      const [insertedIds] = await trx('points').insert(point);
+      const [result] = await trx('points').insert(point).returning('id');
 
       const pointItems = items
         .split(',')
         .map((item: string) => Number(item.trim()))
         .map((item_id: number) => ({
           item_id,
-          point_id: insertedIds,
+          point_id: result.id,
         }));
 
       await trx('point_items').insert(pointItems);
 
       await trx.commit();
 
-      return res.json({ id: insertedIds, ...point });
+      return res.json({ id: result.id, ...point });
     } catch {
       return res.status(400).json({
         message: 'Não foi possível criar o ponto, verifique as informações enviadas e tente novamente.'

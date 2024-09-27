@@ -100,10 +100,11 @@ export default new class UsersController {
         updated_at: knex.fn.now(),
       };
 
-      const [id] = await knex('users').insert(newUser);
+      const [result] = await knex('users').insert(newUser).returning('id');
 
-      return res.status(201).json({ id, name, email });
+      return res.status(201).json({ id: result.id, name, email });
     } catch (error) {
+      console.log(error);
       return res.status(500).json({ message: 'Erro ao criar usuário.', error });
     }
   }
