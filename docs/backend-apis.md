@@ -61,6 +61,10 @@ A modelagem da aplicação é composta por quatro tabelas principais:
 4. **users**: Gerencia os dados dos usuários cadastrados na plataforma.
    - Campos: `id`, `name`, `email`, `password`, `created_at`, `updated_at`.
 
+### Diagrama
+
+![ecoponto-diagram](../.github/ecoponto-diagram.png)
+
 ## Fluxo de Dados
 
 [Diagrama ou descrição do fluxo de dados na aplicação.]
