@@ -15,4 +15,17 @@ afterAll(async () => {
 
 describe('Users API Endpoints', () => {
   let userId: number;
+  /**
+  * Teste para atualizar um usuário
+  */
+  it('Deve atualizar o usuário', async () => {
+    const res = await request(app)
+      .put(`/users/${userId}`)
+      .set('Authorization', `Bearer ${e2eToken}`)
+      .send({
+        name: 'Usuário Atualizado',
+      });
+      
+    expect(res.statusCode).toEqual(200);
+  });
 });
