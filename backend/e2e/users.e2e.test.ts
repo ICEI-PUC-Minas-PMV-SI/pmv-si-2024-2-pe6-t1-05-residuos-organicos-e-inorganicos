@@ -28,4 +28,14 @@ describe('Users API Endpoints', () => {
       
     expect(res.statusCode).toEqual(200);
   });
+  /**
+  * Teste para deletar um usuário
+  */
+  it('Deve deletar o usuário', async () => {
+    const res = await request(app)
+      .delete(/users/${userId})
+      .set('Authorization', Bearer ${e2eToken});
+    
+    expect(res.statusCode).toEqual(204);
+  });
 });
