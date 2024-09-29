@@ -18,8 +18,6 @@ O projeto "EcoPonto" desenvolve uma aplicação de APIs Web para gerenciar ponto
 
 ## Arquitetura
 
-[Descrição da arquitetura das APIs, incluindo os componentes e suas interações.]
-
 A API segue a arquitetura MVC (Model-View-Controller), organizada de forma modular para facilitar a manutenção e escalabilidade. Os principais componentes incluem:
 
 - **Controladores (Controllers):** Responsáveis por lidar com as requisições e respostas HTTP, delegando a lógica de negócios e interações com o banco de dados.
@@ -41,8 +39,6 @@ A API segue a arquitetura MVC (Model-View-Controller), organizada de forma modul
   - `multer.ts`: Configura o Multer para permitir o upload de imagens, como as associadas aos pontos de coleta.
 
 ## Modelagem da Aplicação
-
-[Descreva a modelagem da aplicação, incluindo a estrutura de dados, diagramas de classes ou entidades, e outras representações visuais relevantes.]
 
 A modelagem da aplicação é composta por quatro tabelas principais:
 
@@ -67,16 +63,12 @@ A modelagem da aplicação é composta por quatro tabelas principais:
 
 ## Fluxo de Dados
 
-[Diagrama ou descrição do fluxo de dados na aplicação.]
-
 1. **Usuário (cidadão ou gestor)** interage com a **interface web ou mobile**.
 2. O cliente faz uma requisição HTTP à API, acessando os endpoints de pontos de coleta, itens ou autenticação.
 3. A API processa a requisição, interagindo com o banco de dados conforme necessário.
 4. A resposta é retornada ao cliente, contendo os dados solicitados ou mensagens de sucesso/erro.
 
 ## Requisitos Funcionais
-
-[Liste os principais requisitos funcionais da aplicação.]
 
 1. Cadastrar novos pontos de coleta com imagem, localização e materiais aceitos.
 2. Atualizar informações de pontos de coleta existentes.
@@ -87,16 +79,12 @@ A modelagem da aplicação é composta por quatro tabelas principais:
 
 ## Requisitos Não Funcionais
 
-[Liste os principais requisitos não funcionais da aplicação, como desempenho, segurança, escalabilidade, etc.]
-
 1. **Desempenho:** A API deve ser capaz de processar requisições em menos de 500ms para garantir uma experiência fluida.
 2. **Segurança:** Todas as operações sensíveis devem ser protegidas por autenticação JWT e estar em conformidade com a LGPD.
 3. **Escalabilidade:** A arquitetura deve permitir o crescimento da base de usuários sem perda de desempenho.
 4. **Manutenibilidade:** O código deve ser modular e seguir boas práticas de desenvolvimento, facilitando futuras manutenções.
 
 ## Tecnologias Utilizadas
-
-[Lista das tecnologias principais que serão utilizadas no projeto.]
 
 - **Node.js**: Ambiente de execução JavaScript.
 - **Express**: Framework web para Node.js.
@@ -108,8 +96,6 @@ A modelagem da aplicação é composta por quatro tabelas principais:
 - **TypeScript**: Superconjunto do JavaScript com tipagem estática.
 
 ## API Endpoints
-
-[Liste os principais endpoints da API, incluindo as operações disponíveis, os parâmetros esperados e as respostas retornadas.]
 
 A API "EcoPonto" oferece uma série de endpoints que permitem a interação com o sistema de gestão de pontos de coleta de materiais recicláveis. Abaixo estão descritos os principais endpoints, seus métodos, parâmetros e as respostas esperadas.
 
@@ -592,8 +578,6 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
 
 ## Considerações de Segurança
 
-[Discuta as considerações de segurança relevantes para a aplicação distribuída, como autenticação, autorização, proteção contra ataques, etc.]
-
 A API "EcoPonto" adota práticas de segurança para garantir a proteção de dados e a privacidade dos usuários, com especial atenção à conformidade com a LGPD (Lei Geral de Proteção de Dados). As principais considerações de segurança incluem:
 
 - **Autenticação e Autorização**: A autenticação de usuários é feita utilizando tokens JWT (JSON Web Tokens), garantindo que apenas usuários autenticados possam acessar rotas protegidas. O middleware de autenticação verifica se o token é válido e não expirado, e protege as rotas sensíveis.
@@ -607,8 +591,6 @@ A API "EcoPonto" adota práticas de segurança para garantir a proteção de dad
 - **Atualização de Dependências**: As dependências da API são mantidas atualizadas para evitar vulnerabilidades conhecidas em bibliotecas de terceiros.
 
 ## Implantação
-
-[Instruções para implantar a aplicação distribuída em um ambiente de produção.]
 
 1. Defina os requisitos de hardware e software necessários para implantar a aplicação em um ambiente de produção.
 2. Escolha uma plataforma de hospedagem adequada, como um provedor de nuvem ou um servidor dedicado.
@@ -712,8 +694,6 @@ pm2 startup
 ```
 
 ## Testes
-
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
 
 1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
 2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
