@@ -52,4 +52,16 @@ describe('Users API Endpoints', () => {
     expect(res.body).toHaveProperty('data');
     expect(res.body.data).toBeInstanceOf(Array);
   });
+
+   /**
+   * Teste para obter um usuário específico
+   */
+   it('Deve obter os detalhes de um usuário', async () => {
+    const res = await request(app)
+      .get(/users/${userId})
+      .set('Authorization', Bearer ${e2eToken});
+
+    expect(res.statusCode).toEqual(200);
+    expect(res.body).toHaveProperty('id', userId);
+  });
 });
