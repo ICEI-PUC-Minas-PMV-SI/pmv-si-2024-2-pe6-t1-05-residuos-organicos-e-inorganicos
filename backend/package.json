@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/src/server.js",
     "build": "tsc",
-    "dev": "tsx watch src/server.ts",
+    "dev": "tsx watch --env-file=.env src/server.ts",
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
     "knex:seed": "knex --knexfile knexfile.ts seed:run",
     "test:e2e": "jest --config jest.config.js"
