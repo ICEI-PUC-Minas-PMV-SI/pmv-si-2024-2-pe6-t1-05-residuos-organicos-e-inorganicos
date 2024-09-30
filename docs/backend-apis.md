@@ -99,9 +99,9 @@ A modelagem da aplicação é composta por quatro tabelas principais:
 
 A API "EcoPonto" oferece uma série de endpoints que permitem a interação com o sistema de gestão de pontos de coleta de materiais recicláveis. Abaixo estão descritos os principais endpoints, seus métodos, parâmetros e as respostas esperadas.
 
-## Usuários
+### Usuários
 
-### Autenticar Usuário
+#### Autenticar Usuário
 
 - **Método**: POST
 - **URL**: /users/auth
@@ -134,7 +134,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-### Listar Usuários
+#### Listar Usuários
 
 - **Método**: GET
 - **URL**: /users
@@ -176,7 +176,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-### Detalhar Usuário
+#### Detalhar Usuário
 
 - **Método**: GET
 - **URL**: /users/:id
@@ -213,7 +213,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-### Criar Usuário
+#### Criar Usuário
 
 - **Método**: POST
 - **URL**: /users
@@ -255,7 +255,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-### Atualizar Usuário
+#### Atualizar Usuário
 
 - **Método**: PUT
 - **URL**: /users/:id
@@ -302,7 +302,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-### Deletar Usuário
+#### Deletar Usuário
 
 - **Método**: DELETE
 - **URL**: /users/:id
@@ -330,9 +330,9 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-## Pontos de Coleta
+### Pontos de Coleta
 
-### Listar Pontos de Coleta
+#### Listar Pontos de Coleta
 
 - **Método**: GET
 - **URL**: /points
@@ -376,7 +376,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-### Detalhar Ponto de Coleta
+#### Detalhar Ponto de Coleta
 
 - **Método**: GET
 - **URL**: /points/:id
@@ -417,7 +417,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-### Criar Ponto de Coleta
+#### Criar Ponto de Coleta
 
 - **Método**: POST
 - **URL**: /points
@@ -465,7 +465,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-### Atualizar Ponto de Coleta
+#### Atualizar Ponto de Coleta
 
 - **Método**: PUT
 - **URL**: /points/:id
@@ -522,7 +522,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-### Deletar Ponto de Coleta
+#### Deletar Ponto de Coleta
 
 - **Método**: DELETE
 - **URL**: /points/:id
@@ -550,9 +550,9 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
-## Itens
+### Itens
 
-### Listar Itens
+#### Listar Itens
 
 - **Método**: GET
 - **URL**: /items
@@ -590,51 +590,43 @@ A API "EcoPonto" adota práticas de segurança para garantir a proteção de dad
 
 - **Atualização de Dependências**: As dependências da API são mantidas atualizadas para evitar vulnerabilidades conhecidas em bibliotecas de terceiros.
 
-## Implantação
-
-1. Defina os requisitos de hardware e software necessários para implantar a aplicação em um ambiente de produção.
-2. Escolha uma plataforma de hospedagem adequada, como um provedor de nuvem ou um servidor dedicado.
-3. Configure o ambiente de implantação, incluindo a instalação de dependências e configuração de variáveis de ambiente.
-4. Faça o deploy da aplicação no ambiente escolhido, seguindo as instruções específicas da plataforma de hospedagem.
-5. Realize testes para garantir que a aplicação esteja funcionando corretamente no ambiente de produção.
-
-# API Node.js - Guia de Implantação em Produção (AWS - Ubuntu)
+## Implantação - Guia de Implantação em Produção (AWS - Ubuntu)
 
 Este guia descreve como implantar a aplicação Node.js em um ambiente de produção usando a infraestrutura da AWS com uma instância Ubuntu.
 
-## 1. Requisitos de Hardware e Software
+### 1. Requisitos de Hardware e Software
 
-### Requisitos de Hardware
+#### Requisitos de Hardware
 
 - **Instância EC2 (t2.micro)**: 1 vCPU, 1 GB de RAM.
 - **Espaço em Disco**: 8 GB no EBS (Elastic Block Store).
 
-### Requisitos de Software
+#### Requisitos de Software
 
-- **Node.js**: Versão 18.x ou superior
-- **NPM**: Gerenciador de pacotes Node.js
+- **Node.js**: Versão 20.x ou superior
+- **Yarn**: Gerenciador de pacotes Node.js
 - **PostgreSQL**: Banco de dados relacional
 - **PM2**: Gerenciador de processos para Node.js
 
-## 2. Plataforma de Hospedagem
+### 2. Plataforma de Hospedagem
 
 A aplicação será hospedada em uma instância EC2 da AWS rodando **Ubuntu**. O banco de dados será gerido pelo serviço **Amazon RDS** com PostgreSQL.
 
-## 3. Configuração do Ambiente de Implantação
+### 3. Configuração do Ambiente de Implantação
 
-### Passo 1: Criar Instância EC2
+#### Passo 1: Criar Instância EC2
 
 1. Acesse o [AWS Management Console](https://aws.amazon.com/console/) e inicie uma instância EC2.
 2. Escolha a AMI **Ubuntu Server 22.04 LTS**.
 3. Selecione o tipo de instância **t2.micro** (coberto pelo nível gratuito).
 4. Configure um par de chaves (key pair) para acesso via SSH.
 
-### Passo 2: Configurar PostgreSQL com Amazon RDS
+#### Passo 2: Configurar PostgreSQL com Amazon RDS
 
 1. Crie uma instância do Amazon RDS com o PostgreSQL.
 2. Configure o acesso público e salve a URL de conexão, usuário e senha.
 
-### Passo 3: Instalar Dependências no Servidor
+#### Passo 3: Instalar Dependências no Servidor
 
 Conecte-se à sua instância EC2 via SSH e instale as dependências necessárias:
 
@@ -653,7 +645,7 @@ sudo apt install postgresql-client -y
 sudo npm install pm2 -g
 ```
 
-### Passo 4: Clonar o Repositório e Instalar Dependências
+#### Passo 4: Clonar o Repositório e Instalar Dependências
 
 Dentro da instância EC2:
 
@@ -666,23 +658,24 @@ cd pmv-si-2024-2-pe6-t1-05-residuos-organicos-e-inorganicos
 npm install
 ```
 
-### Passo 5: Configurar Variáveis de Ambiente
+#### Passo 5: Configurar Variáveis de Ambiente
 
 Crie um arquivo `.env` com as variáveis de ambiente:
 
 ```bash
-PORT=3333
-DATABASE_URL=postgres://user:password@rds-endpoint.amazonaws.com:5432/database_name
-JWT_SECRET=seu-segredo-jwt
+POSTGRES_HOST=localhost
+POSTGRES_USER=user
+POSTGRES_PASSWORD=password
+POSTGRES_DB=database_name
 ```
 
-## 4. Deploy da Aplicação
+### 4. Deploy da Aplicação
 
-### Rodar Migrations e Seed
+#### Rodar Migrations e Seed
 
 ```bash
-npm run knex:migrate
-npm run knex:seed
+yarn knex:migrate
+yarn knex:seed
 ```
 
 Iniciar a Aplicação com PM2
@@ -693,33 +686,25 @@ pm2 save
 pm2 startup
 ```
 
-## Testes
+## Testes - Estratégia de Teste End-to-End (E2E)
 
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
-
-# Estratégia de Teste End-to-End (E2E) para Aplicação Node.js
-
-## 1. Objetivo dos Testes E2E
+### 1. Objetivo dos Testes E2E
 
 Os testes End-to-End (E2E) têm como objetivo validar o fluxo completo da aplicação, simulando o comportamento do usuário e garantindo que todos os componentes funcionem corretamente em conjunto. Esses testes verificam desde a requisição HTTP até a interação com o banco de dados e as respostas da API.
 
-## 2. Testes Realizados
+### 2. Testes Realizados
 
-### 2.1 Testes de Endpoints de Itens (Items)
+#### 2.1 Testes de Endpoints de Itens (Items)
 
 - **Objetivo**: Validar o funcionamento do endpoint de listagem de itens.
 - **Cenário Testado**: Enviar uma requisição `GET` para `/items` e verificar se o retorno contém uma lista de itens.
 - **Validação**: O retorno deve ter o status 200 e o corpo da resposta deve ser um array de itens.
 
-### 2.2 Testes de Endpoints de Pontos (Points)
+#### 2.2 Testes de Endpoints de Pontos (Points)
 
 - **Objetivo**: Testar todas as funcionalidades dos pontos de coleta.
 
-#### Cenários Testados:
+##### Cenários Testados:
 
 1. **Criação de Ponto**:
 
@@ -740,11 +725,11 @@ Os testes End-to-End (E2E) têm como objetivo validar o fluxo completo da aplica
    - **Requisição**: `GET` para `/points`, com parâmetros de filtro, como cidade, estado e itens coletados.
    - **Validação**: Status 200, retorno contendo apenas os pontos que correspondem aos critérios de filtragem fornecidos.
 
-### 2.3 Testes de Endpoints de Usuários (Users)
+#### 2.3 Testes de Endpoints de Usuários (Users)
 
 - **Objetivo**: Validar todas as funcionalidades relacionadas aos usuários.
 
-#### Cenários Testados:
+##### Cenários Testados:
 
 1. **Criação de Usuário**:
 
@@ -770,12 +755,12 @@ Os testes End-to-End (E2E) têm como objetivo validar o fluxo completo da aplica
    - **Requisição**: `DELETE` para `/users/:id`.
    - **Validação**: Status 200, confirmação de que o usuário foi removido com sucesso do banco de dados.
 
-## 3. Ferramentas Utilizadas
+### 3. Ferramentas Utilizadas
 
 - **Jest**: Utilizado para estruturar e executar os testes E2E de forma automatizada.
 - **Supertest**: Biblioteca para simular requisições HTTP aos endpoints da aplicação e verificar as respostas retornadas.
 
-## 4. Vantagens dos Testes E2E
+### 4. Vantagens dos Testes E2E
 
 - Garantem que toda a aplicação está funcionando conforme o esperado, incluindo a integração entre os diferentes componentes.
 - Simulam cenários reais de uso, validando a experiência completa do usuário.
@@ -783,6 +768,22 @@ Os testes End-to-End (E2E) têm como objetivo validar o fluxo completo da aplica
 
 Os testes E2E foram implementados para garantir a qualidade de todos os endpoints críticos da aplicação, como listagem e criação de itens, pontos de coleta e usuários. Eles asseguram que o fluxo completo esteja correto e estável, desde a requisição até a persistência no banco de dados.
 
-# Referências
+## Referências
 
-Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
+1. **Node.js**: Plataforma de execução de JavaScript server-side. Disponível em: [https://nodejs.org](https://nodejs.org)
+
+1. **Yarn**: Gerenciador de pacotes Node.js. Disponível em: [https://classic.yarnpkg.com](https://classic.yarnpkg.com)
+
+2. **Express.js**: Framework web para Node.js que facilita o desenvolvimento de APIs e aplicações web. Disponível em: [https://expressjs.com](https://expressjs.com)
+
+3. **Knex.js**: Query builder SQL para Node.js, compatível com diversos bancos de dados relacionais. Documentação oficial: [https://knexjs.org](https://knexjs.org)
+
+4. **PostgreSQL**: Banco de dados objeto-relacional de código aberto. Documentação oficial: [https://www.postgresql.org](https://www.postgresql.org)
+
+5. **Multer**: Middleware para Node.js para manipulação de arquivos em requisições multipart/form-data. Disponível em: [https://github.com/expressjs/multer](https://github.com/expressjs/multer)
+
+6. **bcrypt**: Biblioteca para hash de senhas. Documentação oficial: [https://www.npmjs.com/package/bcrypt](https://www.npmjs.com/package/bcrypt)
+
+7. **jsonwebtoken**: Biblioteca para criação e verificação de JWTs (JSON Web Tokens) em aplicações Node.js. Disponível em: [https://www.npmjs.com/package/jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+
+8. **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código. Documentação oficial: [https://www.typescriptlang.org](https://www.typescriptlang.org)
