@@ -1,7 +1,6 @@
 import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
-
 import knex from '../../database/connection';
 
 const JWT_SECRET = 'ecoponto';

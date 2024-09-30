@@ -1,10 +1,8 @@
-import request from 'supertest';
 import path from 'path';
-
+import request from 'supertest';
 import { app } from '../src/app';
-import { e2eToken } from '../tests/utils';
-
 import knex from '../src/database/connection';
+import { e2eToken } from '../tests/utils';
 
 beforeAll(async () => {
   await knex.raw('TRUNCATE TABLE point_items, points RESTART IDENTITY CASCADE');
