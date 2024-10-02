@@ -768,6 +768,9 @@ Os testes End-to-End (E2E) têm como objetivo validar o fluxo completo da aplica
 
 Os testes E2E foram implementados para garantir a qualidade de todos os endpoints críticos da aplicação, como listagem e criação de itens, pontos de coleta e usuários. Eles asseguram que o fluxo completo esteja correto e estável, desde a requisição até a persistência no banco de dados.
 
+![tests-e2e](https://github.com/user-attachments/assets/caffb421-6aa1-4ac0-a0ae-a716a13c07cf)
+
+
 ## Referências
 
 1. **Node.js**: Plataforma de execução de JavaScript server-side. Disponível em: [https://nodejs.org](https://nodejs.org)
