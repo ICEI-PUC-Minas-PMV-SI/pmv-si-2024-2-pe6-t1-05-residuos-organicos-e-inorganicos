@@ -13,12 +13,14 @@ const upload = multer(multerConfig);
 
 // Users routes
 routes.post('/users/auth', UsersController.authenticateUser);
+routes.post('/users/sign-out', authMiddleware, UsersController.signOutUser);
 
 routes.get('/users', authMiddleware, UsersController.listUsers);
+routes.get('/users/profile', authMiddleware, UsersController.getUserProfile);
 routes.get('/users/:id', authMiddleware, UsersController.getUser);
 routes.post('/users', UsersController.createUser);
-routes.put('/users/:id', authMiddleware, UsersController.updateUser)
-routes.delete('/users/:id', authMiddleware, UsersController.deleteUser)
+routes.put('/users', authMiddleware, UsersController.updateUser)
+routes.delete('/users', authMiddleware, UsersController.deleteUser)
 
 // Items routes
 routes.get('/items', authMiddleware, ItemsController.getItems);

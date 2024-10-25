@@ -5,15 +5,9 @@ export default new class PointsController {
   async listPoints(req: Request, res: Response) {
     const { city, uf, items, page = 1, limit = 10 } = req.query;
 
-    if (!city || !uf || !items) {
-      return res.status(400).json({
-        message: 'Os campos de filtros para Cidade, UF e a lista de itens são obrigatórios.'
-      });
-    }
-
-    const parsedItems = String(items)
+    const parsedItems = items ? String(items)
       .split(',')
-      .map(item => Number(item.trim()));
+      .map(item => Number(item.trim())) : [];
 
     const pageNumber = Number(page);
     const limitNumber = Number(limit);
@@ -21,9 +15,17 @@ export default new class PointsController {
 
     const pointsQuery = knex('points')
       .join('point_items', 'points.id', '=', 'point_items.point_id')
-      .whereIn('point_items.item_id', parsedItems)
-      .where(knex.raw('LOWER(city) = LOWER(?)', city))
-      .where(knex.raw('LOWER(uf) = LOWER(?)', uf))
+      .modify((queryBuilder) => {
+        if (parsedItems.length) {
+          queryBuilder.whereIn('point_items.item_id', parsedItems)
+        }
+        if (city) {
+          queryBuilder.where(knex.raw('LOWER(city) = LOWER(?)', city));
+        }
+        if (uf) {
+          queryBuilder.where(knex.raw('LOWER(uf) = LOWER(?)', uf));
+        }
+      })
       .distinct()
       .select('points.*')
       .limit(limitNumber)
@@ -32,19 +34,37 @@ export default new class PointsController {
 
     const countQuery = knex('points')
       .join('point_items', 'points.id', '=', 'point_items.point_id')
-      .whereIn('point_items.item_id', parsedItems)
-      .where(knex.raw('LOWER(city) = LOWER(?)', city))
-      .where(knex.raw('LOWER(uf) = LOWER(?)', uf))
+      .modify((queryBuilder) => {
+        if (parsedItems.length) {
+          queryBuilder.whereIn('point_items.item_id', parsedItems)
+        }
+        if (city) {
+          queryBuilder.where(knex.raw('LOWER(city) = LOWER(?)', city));
+        }
+        if (uf) {
+          queryBuilder.where(knex.raw('LOWER(uf) = LOWER(?)', uf));
+        }
+      })
       .countDistinct('points.id as total');
 
     const [points, total] = await Promise.all([pointsQuery, countQuery]);
 
-    const serializedPoints = points.map(point => ({
-      ...point,
-      image_url: `http://localhost:3333/uploads/${point.image}`,
+    const serializedPoints = await Promise.all(points.map(async point => {
+      const items = await knex('items')
+        .join('point_items', 'items.id', '=', 'point_items.item_id')
+        .where('point_items.point_id', point.id)
+        .select('items.id', 'items.title');
+
+      return {
+        point: {
+          ...point,
+          image_url: `http://localhost:3333/uploads/${point.image}`,
+        },
+        items
+      }
     }));
 
-    const totalItems = total[0].total;
+    const totalItems = Number(total[0].total);
     const totalPages = Math.ceil(Number(totalItems) / limitNumber);
 
     return res.json({
@@ -75,7 +95,7 @@ export default new class PointsController {
     const items = await knex('items')
       .join('point_items', 'items.id', '=', 'point_items.item_id')
       .where('point_items.point_id', id)
-      .select('items.title');
+      .select('items.id', 'items.title');
 
     return res.json({ point: serializedPoint, items });
   }

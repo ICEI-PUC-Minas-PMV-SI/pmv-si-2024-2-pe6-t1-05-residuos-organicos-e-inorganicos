@@ -2,6 +2,7 @@ import bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import knex from '../../database/connection';
+import type { TokenPayload } from '../middlewares/authMiddleware';
 
 const JWT_SECRET = 'ecoponto';
 
@@ -26,9 +27,28 @@ export default new class UsersController {
         { expiresIn: '1h' }
       );
 
-      return res.json({ token });
+      res.cookie('auth', token, {
+        httpOnly: true,
+        maxAge: 1000 * 60 * 60, // 1 hour
+        path: '/'
+      })
+
+      const { id, name, created_at, updated_at } = user
+      return res.json({ id, name, email, created_at, updated_at });
     } catch (error) {
       return res.status(500).json({ message: 'Erro ao autenticar usuário.', error });
+    }
+  }
+
+  async signOutUser(req: Request, res: Response) {
+    try {
+      res.clearCookie('auth', {
+        httpOnly: true
+      })
+
+      return res.json({ message: 'Sign out realizado com sucesso.' });
+    } catch (error) {
+      return res.status(500).json({ message: 'Erro ao fazer sign out do usuário.', error });
     }
   }
 
@@ -50,7 +70,7 @@ export default new class UsersController {
       return res.json({
         data: users,
         pagination: {
-          totalItems: totalUsers?.count,
+          totalItems: Number(totalUsers?.count),
           totalPages: Math.ceil(Number(totalUsers?.count) / limitNumber),
           currentPage: pageNumber,
           limit: limitNumber,
@@ -58,6 +78,26 @@ export default new class UsersController {
       });
     } catch (error) {
       return res.status(500).json({ message: 'Erro ao listar usuários.', error });
+    }
+  }
+
+  async getUserProfile(req: Request, res: Response) {
+    const token = req.cookies.auth;
+    const { id } = jwt.verify(token, JWT_SECRET) as TokenPayload;
+
+    try {
+      const user = await knex('users')
+        .select('id', 'name', 'email', 'created_at', 'updated_at')
+        .where('id', id)
+        .first();
+
+      if (!user) {
+        return res.status(404).json({ message: 'Usuário não encontrado.' });
+      }
+
+      return res.json(user);
+    } catch (error) {
+      return res.status(500).json({ message: 'Erro ao obter perfil do usuário.', error });
     }
   }
 
@@ -99,9 +139,10 @@ export default new class UsersController {
         updated_at: knex.fn.now(),
       };
 
-      const [result] = await knex('users').insert(newUser).returning('id');
+      const [result] = await knex('users').insert(newUser).returning('*');
 
-      return res.status(201).json({ id: result.id, name, email });
+      const { id, created_at, updated_at } = result
+      return res.status(201).json({ id, name, email, created_at, updated_at });
     } catch (error) {
       console.log(error);
       return res.status(500).json({ message: 'Erro ao criar usuário.', error });
@@ -109,7 +150,9 @@ export default new class UsersController {
   }
 
   async updateUser(req: Request, res: Response) {
-    const { id } = req.params;
+    const token = req.cookies.auth;
+
+    const { id } = jwt.verify(token, JWT_SECRET) as TokenPayload;
     const { name, email, password } = req.body;
 
     try {
@@ -138,16 +181,18 @@ export default new class UsersController {
         updated_at: knex.fn.now(),
       };
 
-      await knex('users').update(updatedUser).where('id', id);
+      const [result] = await knex('users').update(updatedUser).where('id', id).returning('*');
 
-      return res.json({ message: 'Usuário atualizado com sucesso.' });
+      const { created_at, updated_at } = result
+      return res.status(200).json({ id, name, email, created_at, updated_at });
     } catch (error) {
       return res.status(500).json({ message: 'Erro ao atualizar usuário.', error });
     }
   }
 
   async deleteUser(req: Request, res: Response) {
-    const { id } = req.params;
+    const token = req.cookies.auth;
+    const { id } = jwt.verify(token, JWT_SECRET) as TokenPayload;
 
     try {
       const user = await knex('users').where('id', id).first();

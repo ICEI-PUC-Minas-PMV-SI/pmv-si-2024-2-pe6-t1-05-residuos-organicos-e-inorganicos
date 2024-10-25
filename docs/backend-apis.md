@@ -105,7 +105,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
 
 - **Método**: POST
 - **URL**: /users/auth
-- **Descrição**: Autentica um usuário e retorna um token JWT.
+- **Descrição**: Autentica um usuário, salva um cookie httpOnly na aplicação e retorna um JSON com os dados do usuário.
 - **Parâmetros**:
   - Corpo da requisição (JSON):
     ```json
@@ -118,7 +118,11 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
   - Sucesso (200 OK)
     ```json
     {
-      "token": "jwt-token"
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@gmail.com",
+      "created_at": "2024-09-24 18:35:20",
+      "updated_at": "2024-09-24 18:36:31"
     }
     ```
   - Erro (401 Unauthorized)
@@ -134,12 +138,41 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
+#### Desconectar Usuário
+
+- **Método**: POST
+- **URL**: /users/sign-out
+- **Descrição**: Desconecta um usuário removendo o cookie.
+- **Parâmetros**:
+  - `auth`: Token do usuário logado (nos cookies).
+- **Resposta**:
+  - Sucesso (200 OK)
+    ```json
+    {
+      "message": "Sign out realizado com sucesso."
+    }
+    ```
+  - Erro (401 Unauthorized)
+    ```json
+    {
+      "code": "UNAUTHORIZED",
+      "message": "Token não fornecido." | "Token inválido ou expirado."
+    }
+    ```
+  - Erro (500 Internal Server Error)
+    ```json
+    {
+      "message": "Erro ao fazer sign out do usuário."
+    }
+    ```
+
 #### Listar Usuários
 
 - **Método**: GET
 - **URL**: /users
 - **Descrição**: Retorna uma lista paginada de usuários.
 - **Parâmetros**:
+  - `auth`: Token do usuário logado (nos cookies).
   - `page`: Número da página.
   - `limit`: Quantidade de usuários por página.
 - **Resposta**:
@@ -166,6 +199,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
   - Erro (401 Unauthorized)
     ```json
     {
+      "code": "UNAUTHORIZED",
       "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```
@@ -176,12 +210,51 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     }
     ```
 
+#### Detalhar Perfil do Usuário
+
+- **Método**: GET
+- **URL**: /users/profile
+- **Descrição**: Retorna os detalhes do perfil do usuário logado.
+- **Parâmetros**:
+  - `auth`: Token do usuário logado (nos cookies).
+- **Resposta**:
+  - Sucesso (200 OK)
+    ```json
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "johndoe@gmail.com",
+      "created_at": "2024-09-24 18:35:20",
+      "updated_at": "2024-09-24 18:36:31"
+    }
+    ```
+  - Erro (401 Unauthorized)
+    ```json
+    {
+      "code": "UNAUTHORIZED",
+      "message": "Token não fornecido." | "Token inválido ou expirado."
+    }
+    ```
+  - Erro (404 Not Found)
+    ```json
+    {
+      "message": "Usuário não encontrado."
+    }
+    ```
+  - Erro (500 Internal Server Error)
+    ```json
+    {
+      "message": "Erro ao obter usuário."
+    }
+    ```
+
 #### Detalhar Usuário
 
 - **Método**: GET
 - **URL**: /users/:id
 - **Descrição**: Retorna os detalhes de um usuário específico.
 - **Parâmetros**:
+  - `auth`: Token do usuário logado (nos cookies).
   - `id`: ID do usuário (na URL).
 - **Resposta**:
   - Sucesso (200 OK)
@@ -197,6 +270,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
   - Erro (401 Unauthorized)
     ```json
     {
+      "code": "UNAUTHORIZED",
       "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```
@@ -233,19 +307,15 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
     {
       "id": 1,
       "name": "User Name",
-      "email": "user@example.com"
+      "email": "user@example.com",
+      "created_at": "2024-09-24 18:35:20",
+      "updated_at": "2024-09-24 18:35:20"
     }
     ```
   - Erro (400 Bad Request)
     ```json
     {
       "message": "Email já está em uso."
-    }
-    ```
-  - Erro (401 Unauthorized)
-    ```json
-    {
-      "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```
   - Erro (500 Internal Server Error)
@@ -258,10 +328,10 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
 #### Atualizar Usuário
 
 - **Método**: PUT
-- **URL**: /users/:id
-- **Descrição**: Atualiza os dados de um usuário existente.
+- **URL**: /users
+- **Descrição**: Atualiza os dados do usuário logado.
 - **Parâmetros**:
-  - `id`: ID do usuário (na URL).
+  - `auth`: Token do usuário logado (nos cookies).
   - Corpo da requisição (JSON):
     ```json
     {
@@ -274,7 +344,11 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
   - Sucesso (200 OK)
     ```json
     {
-      "message": "Usuário atualizado com sucesso."
+      "id": 1,
+      "name": "Updated Name",
+      "email": "updated@example.com",
+      "created_at": "2024-09-24 18:35:20",
+      "updated_at": "2024-09-24 18:36:31"
     }
     ```
   - Erro (400 Bad Request)
@@ -286,6 +360,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
   - Erro (401 Unauthorized)
     ```json
     {
+      "code": "UNAUTHORIZED",
       "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```
@@ -305,15 +380,16 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
 #### Deletar Usuário
 
 - **Método**: DELETE
-- **URL**: /users/:id
-- **Descrição**: Remove um usuário existente.
+- **URL**: /users
+- **Descrição**: Remove a conta do usuário logado.
 - **Parâmetros**:
-  - `id`: ID do usuário (na URL).
+  - `auth`: Token do usuário logado (nos cookies).
 - **Resposta**:
   - Sucesso (204 No Content)
   - Erro (401 Unauthorized)
     ```json
     {
+      "code": "UNAUTHORIZED",
       "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```
@@ -338,40 +414,50 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
 - **URL**: /points
 - **Descrição**: Retorna uma lista de pontos de coleta.
 - **Parâmetros**:
+  - `auth`: Token do usuário logado (nos cookies).
   - `page`: Número da página.
   - `limit`: Quantidade de usuários por página.
   - `city`: Cidade para filtrar os pontos.
   - `uf`: Estado (UF) para filtrar os pontos.
-  - `items`: IDs dos itens recicláveis separados por vírgula para filtrar pontos que aceitam esses itens.
+  - `items`: IDs dos itens recicláveis para filtrar pontos que aceitam esses itens.
 - **Resposta**:
   - Sucesso (200 OK)
     ```json
     {
       "data": [
         {
-          "id": 1,
-          "image": "image01.jpg",
-          "name": "John Doe",
-          "email": "johndoe@gmail.com",
-          "whatsapp": "123456789",
-          "latitude": -23.55052,
-          "longitude": -46.633308,
-          "city": "São Paulo",
-          "uf": "SP",
-          "image_url": ".../uploads/image01.jpg"
+          "point": {
+            "id": 1,
+            "image": "image01.jpg",
+            "name": "John Doe",
+            "email": "johndoe@gmail.com",
+            "whatsapp": "123456789",
+            "latitude": -23.55052,
+            "longitude": -46.633308,
+            "city": "São Paulo",
+            "uf": "SP",
+            "image_url": ".../uploads/image01.jpg"
+          },
+          "items": [
+            {
+              "id": 1,
+              "title": "Pápeis e Papelão"
+            }
+          ]
         }
       ],
       "pagination": {
-        "totalItems": 2,
-        "totalPages": 2,
+        "totalItems": 1,
+        "totalPages": 1,
         "currentPage": 1,
-        "limit": 1
+        "limit": 10
       }
     }
     ```
   - Erro (401 Unauthorized)
     ```json
     {
+      "code": "UNAUTHORIZED",
       "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```
@@ -382,6 +468,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
 - **URL**: /points/:id
 - **Descrição**: Retorna os detalhes de um ponto de coleta específico.
 - **Parâmetros**:
+  - `auth`: Token do usuário logado (nos cookies).
   - `id`: ID do ponto de coleta (na URL).
 - **Resposta**:
   - Sucesso (200 OK)
@@ -399,14 +486,18 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
         "uf": "SP",
         "image_url": ".../uploads/image01.jpg"
       },
-      "items": {
-        "title": "Pápeis e Papelão"
-      }
+      "items": [
+        {
+          "id": 1,
+          "title": "Pápeis e Papelão"
+        }
+      ]
     }
     ```
   - Erro (401 Unauthorized)
     ```json
     {
+      "code": "UNAUTHORIZED",
       "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```
@@ -423,6 +514,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
 - **URL**: /points
 - **Descrição**: Cria um novo ponto de coleta.
 - **Parâmetros**:
+  - `auth`: Token do usuário logado (nos cookies).
   - Corpo da requisição `FormData`:
     ```json
     {
@@ -455,6 +547,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
   - Erro (401 Unauthorized)
     ```json
     {
+      "code": "UNAUTHORIZED",
       "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```
@@ -471,6 +564,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
 - **URL**: /points/:id
 - **Descrição**: Atualiza os dados de um ponto de coleta existente.
 - **Parâmetros**:
+  - `auth`: Token do usuário logado (nos cookies).
   - `id`: ID do ponto de coleta (na URL).
   - Corpo da requisição `FormData`:
     ```json
@@ -506,6 +600,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
   - Erro (401 Unauthorized)
     ```json
     {
+      "code": "UNAUTHORIZED",
       "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```
@@ -528,12 +623,14 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
 - **URL**: /points/:id
 - **Descrição**: Remove um ponto de coleta existente.
 - **Parâmetros**:
+  - `auth`: Token do usuário logado (nos cookies).
   - `id`: ID do ponto de coleta (na URL).
 - **Resposta**:
   - Sucesso (204 No Content)
   - Erro (401 Unauthorized)
     ```json
     {
+      "code": "UNAUTHORIZED",
       "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```
@@ -558,6 +655,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
 - **URL**: /items
 - **Descrição**: Retorna uma lista de itens.
 - **Parâmetros**:
+  - `auth`: Token do usuário logado (nos cookies).
 - **Resposta**:
   - Sucesso (200 OK)
     ```json
@@ -572,6 +670,7 @@ A API "EcoPonto" oferece uma série de endpoints que permitem a interação com 
   - Erro (401 Unauthorized)
     ```json
     {
+      "code": "UNAUTHORIZED",
       "message": "Token não fornecido." | "Token inválido ou expirado."
     }
     ```

@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 
 const JWT_SECRET = 'ecoponto';
 
-interface TokenPayload {
+export interface TokenPayload {
   id: number;
   email: string;
   iat: number;
@@ -11,13 +11,12 @@ interface TokenPayload {
 }
 
 export function authMiddleware(req: Request, res: Response, next: NextFunction) {
-  const authHeader = req.headers.authorization;
+  const token = req.cookies.auth;
 
-  if (!authHeader) {
-    return res.status(401).json({ message: 'Token não fornecido.' });
+
+  if (!token) {
+    return res.status(401).json({ code: 'UNAUTHORIZED', message: 'Token não fornecido.' });
   }
-
-  const [, token] = authHeader.split(' ');
 
   try {
     const decoded = jwt.verify(token, JWT_SECRET) as TokenPayload;
@@ -30,6 +29,6 @@ export function authMiddleware(req: Request, res: Response, next: NextFunction) 
 
     next();
   } catch (error) {
-    return res.status(401).json({ message: 'Token inválido ou expirado.' });
+    return res.status(401).json({ code: 'UNAUTHORIZED', message: 'Token inválido ou expirado.' });
   }
 }
