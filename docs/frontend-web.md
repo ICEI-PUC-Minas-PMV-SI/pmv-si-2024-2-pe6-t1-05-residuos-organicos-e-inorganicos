@@ -225,13 +225,42 @@ Essas considerações garantem uma navegação segura e protegem tanto os dados 
 
 ## Testes
 
-[Descreva a estratégia de teste, incluindo os tipos de teste a serem realizados (unitários, integração, carga, etc.) e as ferramentas a serem utilizadas.]
+### Cenários Testados:
 
-1. Crie casos de teste para cobrir todos os requisitos funcionais e não funcionais da aplicação.
-2. Implemente testes unitários para testar unidades individuais de código, como funções e classes.
-3. Realize testes de integração para verificar a interação correta entre os componentes da aplicação.
-4. Execute testes de carga para avaliar o desempenho da aplicação sob carga significativa.
-5. Utilize ferramentas de teste adequadas, como frameworks de teste e ferramentas de automação de teste, para agilizar o processo de teste.
+1. **Criação de Conta**:
+
+   - **Teste**: Deve ser possível criar uma conta com sucesso.
+   - **Validação**: Na página inicial, deve clicar no botão "Cadastre seu perfil agora", preencher as informações necessárias e receber um feedback que a conta foi criada.
+
+   ![ecoponto-web-step-1](../.github/ecoponto-web-step-1.png)
+
+2. **Login**:
+
+   - **Teste**: Deve ser possível fazer login no sistema.
+   - **Validação**: Na página inicial, deve clicar no avatar do usuário, preencher as informações necessárias e clicar no botão "Acesse seu perfil".
+
+   ![ecoponto-web-step-2](../.github/ecoponto-web-step-2.png)
+
+3. **Listagem de Pontos**:
+
+   - **Teste**: Deve ser possível listar os pontos de coleta cadastrados.
+   - **Validação**: Após estar logado, deve clicar no avatar do usuário, e escolher a opção "Encontrar pontos de coleta", após isso deve ser exibido a lista de pontos de coleta cadastrados.
+
+   ![ecoponto-web-step-3](../.github/ecoponto-web-step-3.png)
+
+4. **Criação de Ponto**:
+
+   - **Teste**: Deve ser possível criar um ponto de coleta com sucesso.
+   - **Validação**: Após estar logado, deve clicar no avatar do usuário, e escolher a opção "Cadastrar ponto de coleta", preencher todos os campos necessários, e clicar no botão "Cadastrar ponto de coleta".
+
+   ![ecoponto-web-step-4](../.github/ecoponto-web-step-4.png)
+
+5. **Editar dados do Perfil**:
+
+   - **Teste**: Deve ser possível editar as informações do perfil com sucesso.
+   - **Validação**: Após estar logado, deve clicar no avatar do usuário, e ecolher a opção "Editar Perfil", preencher todas as informações necessárias e clicar no botão de "Editar Perfil".
+
+   ![ecoponto-web-step-5](../.github/ecoponto-web-step-5.png)
 
 # Referências
 
