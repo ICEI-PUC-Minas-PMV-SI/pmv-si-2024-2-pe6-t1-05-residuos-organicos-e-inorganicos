@@ -114,10 +114,6 @@ A interface foi desenhada para ser intuitiva e acessível, promovendo uma experi
 ![ecoponto-web-2](../.github/ecoponto-web-2.png)
 ![ecoponto-web-3](../.github/ecoponto-web-3.png)
 
-### Design Visual
-
-[Descreva o estilo visual da interface, incluindo paleta de cores, tipografia, ícones e outros elementos gráficos.]
-
 ### Layout Responsivo
 
 A interface da EcoPonto é responsiva, adaptando-se a diferentes dispositivos para garantir uma experiência consistente:
@@ -142,10 +138,9 @@ Esse fluxo assegura que a aplicação web funcione de forma dinâmica e conectad
 
 1. Cadastrar novos pontos de coleta com imagem, localização e materiais aceitos.
 2. Atualizar informações de pontos de coleta existentes.
-3. Excluir pontos de coleta.
-4. Listar e filtrar pontos de coleta por localização, tipo de material aceito, entre outros critérios.
-5. Autenticação de usuários via JWT.
-6. Upload de imagens associadas aos pontos de coleta.
+3. Listar e filtrar pontos de coleta por localização, tipo de material aceito, entre outros critérios.
+4. Autenticação de usuários via JWT.
+5. Upload de imagens associadas aos pontos de coleta.
 
 ## Requisitos Não Funcionais
 
