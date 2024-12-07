@@ -1,7 +1,5 @@
 # Front-end Web
 
-[Inclua uma breve descrição do projeto e seus objetivos.]
-
 ## Tecnologias Utilizadas
 
 - **React JS**: Biblioteca para criação de interfaces de usuário.
